@@ -9,12 +9,13 @@
   ],
   "scripts": {
     "clean": "del-cli ./dist/*",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc",
+    "pub": "git add . && git commit -m\"Updates\" && npm version patch && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "del-cli": "^7.0.0",
     "typescript": "^5.9.3"
