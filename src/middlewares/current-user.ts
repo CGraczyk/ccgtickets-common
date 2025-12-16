@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 
 import jwt from "jsonwebtoken";
+//@ts-ignore
 
 interface UserPayload {
   id: string;
