@@ -1,15 +1,14 @@
 {
   "name": "@ccgtickets/common",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "type": "module",
-  "files": ["build/**/*"],
-
-
+  "files": [
+    "build/**/*"
+  ],
   "main": "./build/cjs/index.js",
   "module": "./build/esm/index.js",
   "types": "./build/esm/index.d.ts",
-
   "exports": {
     ".": {
       "types": "./build/esm/index.d.ts",
@@ -17,25 +16,17 @@
       "require": "./build/cjs/index.js"
     }
   },
-
-
   "scripts": {
     "clean": "del-cli ./build/*",
-
     "build:esm": "tsc -p tsconfig.esm.json",
-
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "postbuild:cjs": "node ./scripts/write-cjs-package.mjs",
-
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    
     "pub": "git add . && git commit -m\"Updates\" && npm version patch && npm run build && npm publish --access public"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
-  
   "devDependencies": {
     "del-cli": "^7.0.0",
     "typescript": "^5.9.3"
