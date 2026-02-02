@@ -21,8 +21,13 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "postbuild:cjs": "node ./scripts/write-cjs-package.mjs",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "pub": "git add . && git commit -m\"Updates\" && npm version patch && npm run build && npm publish --access public"
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run smoke",
+
+    "smoke:cjs": "node -e \"require('./build/cjs/index.js'); console.log('cjs ok')\"",
+    "smoke:esm": "node -e \"import('./build/esm/index.js').then(()=>console.log('esm ok'))\"",
+    "smoke": "npm run smoke:cjs && npm run smoke:esm",
+
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish --access public"
   },
   "keywords": [],
   "author": "",
