@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build/cjs",
+    "module": "commonjs",
+    "target": "es2019",
+    "declaration": true,
+    "declarationDir": "./build/cjs",
+    "verbatimModuleSyntax": false
+  }
+}

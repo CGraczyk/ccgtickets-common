@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build/esm",
+    "module": "nodenext",
+    "target": "esnext",
+    "declaration": true,
+    "declarationDir": "./build/esm"
+  }
+}
