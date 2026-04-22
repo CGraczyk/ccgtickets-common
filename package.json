@@ -25,7 +25,7 @@
     "smoke:cjs": "node -e \"require('./build/cjs/index.js'); console.log('cjs ok')\"",
     "smoke:esm": "node -e \"import('./build/esm/index.js').then(()=>console.log('esm ok'))\"",
     "smoke": "npm run smoke:cjs && npm run smoke:esm",
-    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish --access public"
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm login && npm publish --access public"
   },
   "keywords": [],
   "author": "",

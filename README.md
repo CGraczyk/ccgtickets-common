@@ -37,7 +37,8 @@ That script:
 1. creates a commit in this repo
 2. bumps the package version
 3. builds both ESM and CJS outputs
-4. publishes the package to npm
+4. prompt a login to npm
+5. publishes the package to npm
 
 ## Updating dependent services
 
